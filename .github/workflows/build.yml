@@ -20,8 +20,11 @@ jobs:
           node-version: '22'
       - name: Regression tests (synthetic data only)
         run: python3 test.py
-      - name: Install Android SDK platform and tools
-        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@9fc6c4e9069bf8d3d10b2204b1fb8f6ef7065407 # v3
+        with:
+          packages: 'platforms;android-35 build-tools;35.0.0'
+          log-accepted-android-sdk-licenses: false
       - name: Build unsigned APK
         run: python3 build.py --sdk "$ANDROID_HOME"
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
