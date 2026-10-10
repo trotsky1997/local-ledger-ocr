@@ -27,7 +27,7 @@ adb install -r build/local-ledger-signed.apk
 
 命令交互询问密码，不要把私钥或密码提交到 Git。新密钥无法覆盖使用另一密钥签名的已安装 APK。需要先在应用内导出 JSON，卸载旧签名版本，再安装、导入。
 
-Release v1.2.0 APK 使用本地开发证书，指纹 SHA256：`084af6e717314cd1283184807f8769e6de1144783f69b76f48f898151cb85c8a`。私钥不在仓库。GitHub Actions 仅生成未签名构建产物，Release 的已签名安装包单独发布。
+Release v1.2.0 APK 使用本地开发证书，指纹 SHA256：`084af6e717314cd1283184807f8769e6de1144783f69b76f48f898151cb85c8a`。私钥不在仓库。构建与测试由本地执行，Release 的已签名安装包手动发布；仓库不配置 GitHub Actions CI。
 
 ## OCR 二进制来源
 

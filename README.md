@@ -1,6 +1,5 @@
 # 本地记账 OCR · Local Ledger OCR
 
-[![Android build and regression tests](https://github.com/trotsky1997/local-ledger-ocr/actions/workflows/build.yml/badge.svg)](https://github.com/trotsky1997/local-ledger-ocr/actions/workflows/build.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 
 一个免登录、在本机保存账本的独立 Android 应用。使用 [ppocr-rs](https://github.com/trotsky1997/ppocr-rs) 离线识别账单截图，支持微信、支付宝、银行通知和新短信记账，以及流水文件导入。
@@ -46,7 +45,7 @@ python build.py --sdk /path/to/Android/Sdk
 python test.py
 ```
 
-公开测试仅使用合成交易文本和生成的表格，不包含任何用户账单或截图。覆盖金融消息过滤、余额/额度排除、CSV 引号与换行、GB18030、退款、稳定 ID、银行借贷方向、小米六列往返和多卡片解析。CI 同时构建未签名 APK。
+公开测试仅使用合成交易文本和生成的表格，不包含任何用户账单或截图。覆盖金融消息过滤、余额/额度排除、CSV 引号与换行、GB18030、退款、稳定 ID、银行借贷方向、小米六列往返和多卡片解析。构建和测试在本地运行，仓库不配置 GitHub Actions CI。
 
 ## 结构
 
