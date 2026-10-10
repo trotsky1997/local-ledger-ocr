@@ -1,0 +1,10 @@
+{
+  "file": "ppocr_rs.wasm",
+  "size_bytes": 12457872,
+  "sha256": "7bb573390bb771b357a8fd4de06e575f167b70d9ad69c1ee4f60345117727134",
+  "relaxed": {
+    "file": "ppocr_rs_fma.wasm",
+    "size_bytes": 12461011,
+    "sha256": "c153e994e1580e3abcec0749ce29f5ec7ade30296124dca135f685eadd26aea3"
+  }
+}

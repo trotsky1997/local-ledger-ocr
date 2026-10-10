@@ -1,0 +1,11 @@
+import assert from 'node:assert/strict';
+import {parseText} from './parser.mjs';
+const now=new Date(2026,9,11,12,34);
+let x=parseText('微信支付\n支付成功\n￥23.80\n商户名称\n测试咖啡店\n2026-10-10 09:05:00',now);
+assert.equal(x.amount,'23.80');assert.equal(x.merchant,'测试咖啡店');assert.equal(x.happened,'2026-10-10T09:05');assert.equal(x.direction,'expense');
+x=parseText('收款成功\n50.00元',now);assert.equal(x.direction,'income');assert.equal(x.amount,'50.00');
+x=parseText('原价 ¥100.00\n实付 ￥80.00',now);assert.equal(x.amount,'');assert.deepEqual(x.amounts,['100.00','80.00']);
+x=parseText('订单号 2026101100123456\n2026-10-11 11:20:30',now);assert.equal(x.amount,'');
+x=parseText('退款成功\n￥-12.50',now);assert.equal(x.amount,'12.50');assert.equal(x.direction,'income');
+x=parseText('付款金额\n1,234.56\n2026-02-31 09:00',now);assert.equal(x.amount,'1234.56');assert.equal(x.happened,'2026-10-11T12:34');
+console.log('PASS: 6 receipt parsing cases; ambiguous amounts remain unselected');

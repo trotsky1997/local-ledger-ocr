@@ -1,0 +1,6 @@
+* text=auto
+*.wasm binary
+*.java text eol=lf
+*.mjs text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
